@@ -25,11 +25,15 @@
 ### [02] Scripting (Bash)
 > There are 2 projects in this material. The first is about automation of directory creation and the second is about creating simple script for automatic web app deployment.
 ### [03] Virtualization (Virtualbox & Vagrant)
-> Tere are 3 projects in this material. The first is about installation of apache web server on ubuntu using vagrant, the second is runninng the script that was created in the previous project (automatic web app deployment) with vagrant, and the third is manual deployment of wordpress on EC2.
+> There are 3 projects in this material. The first is about installation of apache web server on ubuntu using vagrant, the second is runninng the script that was created in the previous project (automatic web app deployment) with vagrant, and the third is manual deployment of wordpress on EC2.
 ### [04] Storage (LVM)
+> There are 2 projects in this material. The first is about attaching and mounting additional EBS volume into EC2 and the second is managing storage on EC2 by creating Logical Volume.
 ### [05] DNS (bind9)
+> The project in this material is about setup and configuring DNS server on EC2.
 ### [06] Web Server (NGINX)
+> The project in this material is about setup and configuring 2 wordpress site using NGINX web server, with additional condition that one of the two site using HTTPS and the 2 sites must on the same EC2 instance (using NGINX server block).
 ### [07] Container (Docker)
+> The project
 ### [08] Container Orchestration (Docker Swarm)
 ### [09] High Availability
 
