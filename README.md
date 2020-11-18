@@ -12,8 +12,7 @@
     - [[05] DNS (bind9)](#05-dns-bind9)
     - [[06] Web Server (NGINX)](#06-web-server-nginx)
     - [[07] Container (Docker)](#07-container-docker)
-    - [[08] Container Orchestration (Docker Swarm)](#08-container-orchestration-docker-swarm)
-    - [[09] High Availability](#09-high-availability)
+    - [[08] Container Orchestration & High Availability (Docker Swarm)](#08-container-orchestration--high-availability-docker-swarm)
     - [[Mid] Mid-term Project](#mid-mid-term-project)
     - [[Fin] Final Project](#fin-final-project)
 
@@ -33,9 +32,10 @@
 ### [06] Web Server (NGINX)
 > The project in this material is about setup and configuring 2 wordpress site using NGINX web server, with additional condition that one of the two site using HTTPS and the 2 sites must on the same EC2 instance (using NGINX server block).
 ### [07] Container (Docker)
-> The project
-### [08] Container Orchestration (Docker Swarm)
-### [09] High Availability
+> The project in this material is to create 2 container (wordpress and mysql) and connect them either by using docker compose or manually.
+### [08] Container Orchestration & High Availability (Docker Swarm)
+> The project in this material is to create a swarm with 3 node (1 manager). The swarm then must run a wordpress service with 5 replicas and also with database (2 replicas at minimum).
 
 ### [Mid] Mid-term Project
+> 
 ### [Fin] Final Project
