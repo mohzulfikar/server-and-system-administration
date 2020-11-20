@@ -44,3 +44,13 @@
 > - The site must use a domain provided on the spreadsheet (or custom)
 
 ### [Fin] Final Project
+> The project is about implementing high availability concept.
+> ![](img/final-project-assignment.png)
+> Student must create an environment with a configured network topology of the system that can be seen in the image above.
+> - Create 1 EC2 instance t2.micro (VM1) as host to nginx container (load balancer)
+> - Create 2 EC2 instance t2.medium (VM2 and VM3) as docker swarm node (host of moodle and database cluster)
+> - Configure Nginx load balancer with HTTPS. An example of configuration file can be seen on the following [link](https://github.com/nginxinc/NGINX-Demos/tree/master/nginx-swarm-demo/nginxbasic).
+> - Create 5 moodle service replicas using bitnami image.
+> - Each swarm node services are connected with overlay network.
+> - Client can access web through VM1 public IP with HTTPS protocol.
+> - VM1 connected with VM2 and VM3 through private IP.
