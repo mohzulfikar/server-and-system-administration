@@ -7,6 +7,9 @@ In this project, I was introduced to the AWS cloud environment. Starting from ho
   - [1. AWS Account](#1-aws-account)
   - [2. Dashboard](#2-dashboard)
   - [3. EC2 Dashboard](#3-ec2-dashboard)
+  - [4. Launching new Instance](#4-launching-new-instance)
+    - [Step 1: Choose AMI](#step-1-choose-ami)
+    - [Step 2: Choose Instance Type](#step-2-choose-instance-type)
 
 ## 1. AWS Account
 ![](img/intro_000.png)
@@ -19,3 +22,14 @@ In the dashboard, there's so much service provided by AWS. For this intro projec
 ## 3. EC2 Dashboard
 ![](img/intro_002.png)
 In this EC2 dashboard, we will see many term and subsection. We will focus on 5 of them. The first one is Instance (running), in this subsection we will see how many aws instance that are currently running (booting up). The second one is Volumes, in this section we can see how many volume do we have (volume is like an ssd or disk drive, but in the cloud). The third is Key pairs, key pair is the key that we use to connect to our instance. Fourth is Elastic IP that we have. Then the fifth is option to launch new EC2 instance, click to launch instance.
+
+## 4. Launching new Instance
+
+There are 7 step for launching an instance on AWS. The first one is to choose image, either from AWS or community (or even add your own image).
+
+### Step 1: Choose AMI
+![](img/intro_003.png)
+
+Search "ubuntu" in the search bar and choose "Ubuntu Server 20.04". Here, we can see that there's "Free tier eligible" notes on the bottom of the logo. It means that, this image can be used for AWS free account and don't have additional cost. Select the image.
+
+### Step 2: Choose Instance Type
