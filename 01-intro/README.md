@@ -10,6 +10,8 @@ In this project, I was introduced to the AWS cloud environment. Starting from ho
   - [4. Launching new Instance](#4-launching-new-instance)
     - [Step 1: Choose AMI](#step-1-choose-ami)
     - [Step 2: Choose Instance Type](#step-2-choose-instance-type)
+    - [Step 3: Configure Instance](#step-3-configure-instance)
+    - [Step 4: Add Storage](#step-4-add-storage)
 
 ## 1. AWS Account
 ![](img/intro_000.png)
@@ -33,3 +35,13 @@ There are 7 step for launching an instance on AWS. The first one is to choose im
 Search "ubuntu" in the search bar and choose "Ubuntu Server 20.04". Here, we can see that there's "Free tier eligible" notes on the bottom of the logo. It means that, this image can be used for AWS free account and don't have additional cost. Select the image.
 
 ### Step 2: Choose Instance Type
+![](img/intro_004.png)
+
+Choose t2.micro that have "free tier eligible" notes. Some notes on choosing instance type, we can scale and modify our instance type later on the instance setting (that's the cool part about cloud computing). So for example, now I launch a t2.micro instance for my web app server, several months later the web app is slow because there's so much request to handle for t2.micro instance, I can easily modify currently running instance (by stopping it for a minute) into the type that has much more memory or CPU without reinstalling my web app.
+
+### Step 3: Configure Instance
+![](img/intro_005.png)
+
+In this step, we can configure many things. The important part is the "Number of Instances", here we can specify how much t2.micro instance that we want to launch.
+
+### Step 4: Add Storage
