@@ -12,6 +12,8 @@ In this project, I was introduced to the AWS cloud environment. Starting from ho
     - [Step 2: Choose Instance Type](#step-2-choose-instance-type)
     - [Step 3: Configure Instance](#step-3-configure-instance)
     - [Step 4: Add Storage](#step-4-add-storage)
+    - [Step 5: Add Tags](#step-5-add-tags)
+    - [Step 6: Configure Security Group](#step-6-configure-security-group)
 
 ## 1. AWS Account
 ![](img/intro_000.png)
@@ -45,3 +47,18 @@ Choose t2.micro that have "free tier eligible" notes. Some notes on choosing ins
 In this step, we can configure many things. The important part is the "Number of Instances", here we can specify how much t2.micro instance that we want to launch.
 
 ### Step 4: Add Storage
+![](img/intro_006.png)
+
+In this step, we can configure how much storage volume for the instance. For linux image, 8 GiB is more than enough, for windows image, a 30GiB is a minimum. We can also change volume type to much more fast SSD or HDD.
+
+### Step 5: Add Tags
+
+In this step, we can specify tags for the instance or create new one.
+
+### Step 6: Configure Security Group
+![](img/intro_007.png)
+
+In this step, we can specify security group for our instance. According to [this documentation](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html), security group is simply a "virtual firewall" for an instance to control inbound and outbound traffic. We can select either create new or select existing security group. We can add name to a security group. The default for all instance is to only allow traffic from TCP port 22 or SSH port, we can add new rule for example if we want create web app that serve on HTTP protocol, we can add new rule that allow inbound traffic at port 80. 
+
+We can also filter traffic by IP, 0.0.0.0/0 means it can be accessed from any computer. As we can see from the image above, there's warning because allowing SSH from any IP can lead to bad security practice. If we have VPN or static IP, we can modify it to allow SSH only from our static IP or "trusted" IP(s).
+
