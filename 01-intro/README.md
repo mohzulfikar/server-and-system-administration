@@ -16,6 +16,7 @@ In this project, I was introduced to the AWS cloud environment. Starting from ho
     - [Step 6: Configure Security Group](#step-6-configure-security-group)
     - [Step 7: Review](#step-7-review)
   - [5. EC2 Instance Detail](#5-ec2-instance-detail)
+  - [6. Connecting to EC2 Instance](#6-connecting-to-ec2-instance)
 
 ## 1. AWS Account
 ![](img/intro_000.png)
@@ -78,4 +79,19 @@ In this step, we can review our instance settings and select or create new key t
 After successfully launching the instance, we will be redirected to the EC2 instance dashboard page. Here, we can se some information about the instance we lauched. The first one is Instance ID, it is used to differentiate between instances. Second is Instance state, it shows the status of an instance (for a few moment, a new instance will have "pending" status and after some time it will become "running"). The third is instance type that we specify before.
 
 ![](img/intro_011.png)
-There's also some other detail on the bottom part. We will focus on the IP and DNS part. Here, we can see the instance have public, private, and elastic IP (none) and also public and private DNS. Public IP is the IP we use mainly to communicate with instance or give it to domain provider fro serving a web app (reachable from public internet). Private IP is not reachable from anywhere and mainly use for communication between AWS instance on the same private network. Elastic IP is a public IP that we can allocate to our instance, the different between using elastic IP and not using it is if we want to restart our instance and not associate it to an elastic IP, the public IP will change. The last is Public DNS,
+There's also some other detail on the bottom part. We will focus on the IP and DNS part. Here, we can see the instance have public, private, and elastic IP (none) and also public and private DNS. Public IP is the IP we use mainly to communicate with instance or give it to domain provider fro serving a web app (reachable from public internet). Private IP is not reachable from anywhere and mainly use for communication between AWS instance on the same private network. Elastic IP is a public IP that we can allocate to our instance, the different between using elastic IP and not using it is if we want to restart our instance and not associate it to an elastic IP, the public IP will change. The last is Public DNS, public DNS is like public IP we can either use public DNS or IP to connect to our instance. For more details, visit [this documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html)
+
+## 6. Connecting to EC2 Instance
+
+Connecting to EC2 instance is very straightforward, if we are on linux, just install openssh and use command,
+```bash
+ssh -i private-key.pem ubuntu@public-DNS-or-IP
+```
+
+![](img/intro_013.png)
+
+Take a notes that we must modify private-key permission to somewhat like `600` or `400` by using chmod.
+
+![](img/intro_014.png)
+
+If we success to open a ssh connection, the console will print a banner like the image above and we can start practicing with EC2.
