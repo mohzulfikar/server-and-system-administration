@@ -1,16 +1,17 @@
 # Directory automation
-In this project, I was introduced to the AWS cloud environment. Starting from how to create an awseducate account to creating an ec2 instance.
+In this project, I was assigned to create simple bash script that creates _n_ directory provided on the parameter like,
+```bash
+./script.sh 4
+```
+And then it would make 4 directories.
 
 ## Table of contents
 - [Directory automation](#directory-automation)
   - [Table of contents](#table-of-contents)
-  - [First Project: Directory automation](#first-project-directory-automation)
-    - [Visit this link](#visit-this-link)
-  - [Second Project: Web app deployment automation](#second-project-web-app-deployment-automation)
+  - [1.](#1)
+  - [2.](#2)
 
-## First Project: Directory automation
-### Visit this [link]()
+## 1. 
 
-## Second Project: Web app deployment automation
-
+## 2. 
 

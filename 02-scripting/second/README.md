@@ -1,16 +1,14 @@
-# Directory automation
-In this project, I was introduced to the AWS cloud environment. Starting from how to create an awseducate account to creating an ec2 instance.
+# Web app deployment automation
+In this project, I was assigned to create a bash script that performs automated deployment simple web app that was created earlier.
 
 ## Table of contents
-- [Directory automation](#directory-automation)
+- [Web app deployment automation](#web-app-deployment-automation)
   - [Table of contents](#table-of-contents)
-  - [First Project: Directory automation](#first-project-directory-automation)
-    - [Visit this link](#visit-this-link)
-  - [Second Project: Web app deployment automation](#second-project-web-app-deployment-automation)
+  - [1.](#1)
+  - [2.](#2)
 
-## First Project: Directory automation
-### Visit this [link]()
+## 1. 
 
-## Second Project: Web app deployment automation
+## 2. 
 
 
