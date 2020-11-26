@@ -5,9 +5,9 @@
 - [Server and System Administration](#server-and-system-administration)
   - [Table of Contents](#table-of-contents)
   - [List of Project(s)](#list-of-projects)
-    - [[01] Intro to Cloud Computing (AWS)](#01-intro-to-cloud-computing-aws)
-    - [[02] Scripting (Bash)](#02-scripting-bash)
-    - [[03] Virtualization (Virtualbox & Vagrant)](#03-virtualization-virtualbox--vagrant)
+    - [[[01] Intro to Cloud Computing (AWS)](01-intro/README.md)](#01-intro-to-cloud-computing-aws)
+    - [[[02] Scripting (Bash)](02-scripting/README.md)](#02-scripting-bash)
+    - [[[03] Virtualization (Virtualbox & Vagrant)](03-virtualization/README.md)](#03-virtualization-virtualbox--vagrant)
     - [[04] Storage (LVM)](#04-storage-lvm)
     - [[05] DNS (bind9)](#05-dns-bind9)
     - [[06] Web Server (NGINX)](#06-web-server-nginx)
@@ -19,11 +19,11 @@
 
 ## List of Project(s)
 
-### [01] Intro to Cloud Computing (AWS)
+### [[01] Intro to Cloud Computing (AWS)](01-intro/README.md)
 > In this project, I was introduced to the AWS cloud environment. Starting from how to create an awseducate account to creating an ec2 instance.
-### [02] Scripting (Bash)
+### [[02] Scripting (Bash)](02-scripting/README.md)
 > There are 2 projects in this material. The first is about automation of directory creation and the second is about creating simple script for automatic web app deployment.
-### [03] Virtualization (Virtualbox & Vagrant)
+### [[03] Virtualization (Virtualbox & Vagrant)](03-virtualization/README.md)
 > There are 3 projects in this material. The first is about installation of apache web server on ubuntu using vagrant, the second is runninng the script that was created in the previous project (automatic web app deployment) with vagrant, and the third is manual deployment of wordpress on EC2.
 ### [04] Storage (LVM)
 > There are 2 projects in this material. The first is about attaching and mounting additional EBS volume into EC2 and the second is managing storage on EC2 by creating Logical Volume.
