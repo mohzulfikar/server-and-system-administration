@@ -19,21 +19,21 @@ sudo apt-get -y install apache2
 # firewall config (optional)
 printf "\n==============> Enabling firewall <==============\n\n"
 
-# sudo ufw app list (melihat aplikasi yang dapat diatur)
+# sudo ufw app list # (to view list of aplication that can be configured)
 sudo ufw allow 'Apache'
 
-# Pengaturan direktori root apache2
+# Setup apache2 root directory
 printf "\n==============> Deploying Webapp <==============\n\n"
 cd /var/www
 
-# Clone repository github
+# Clone github repository
 sudo git clone https://github.com/mohzulfikar/webapp.git
 
-# Mengganti direktori root apache2 dari /var/www/html menjadi /var/www/webapp dan melakukan restart apache2
+# Change apache2 root directory from /var/www/html to /var/www/webapp and restart apache2
 printf "\n==============> Renaming default apache2 configuration <==============\n\n"
 
 sudo sed -i -r 's/\/html/\/webapp/g' /etc/apache2/sites-available/000-default.conf 
 sudo /etc/init.d/apache2 restart
 
-# Script selesai dan vm siap untuk digunakan
+# Script is completed and web app is already served
 printf "\n==============> Automation Complete <==============\n\n"

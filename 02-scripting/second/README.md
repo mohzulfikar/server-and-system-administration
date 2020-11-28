@@ -11,7 +11,7 @@ In this project, I was assigned to create a bash script that performs automated 
 
 ![](img/001.png)
 
-Log in to EC2 instance, create new .sh file with prefered text editor (i use vim btw).
+Log in to EC2 instance with an additional rule to allow inbound connection on port 80, create new .sh file with prefered text editor (i use vim btw).
 
 I will deep dive into the script i had [created](webapp-script.sh),
 
@@ -31,6 +31,15 @@ sudo apt-get -y install git
 printf "\n==============> Installing apache2 <==============\n\n"
 
 sudo apt-get -y install apache2
+```
+
+Next, we setup a firewall using ufw. Although, this is optional because we already configure a firewall using security group.
+```bash
+# firewall config (optional)
+printf "\n==============> Enabling firewall <==============\n\n"
+
+# sudo ufw app list # (to view list of aplication that can be configured)
+sudo ufw allow 'Apache' # allow apache
 ```
 
 
