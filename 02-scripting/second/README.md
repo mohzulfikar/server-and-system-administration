@@ -13,6 +13,9 @@ In this project, I was assigned to create a bash script that performs automated 
 
 Log in to EC2 instance with an additional rule to allow inbound connection on port 80, create new .sh file with prefered text editor (i use vim btw).
 
+## 2. Running the Script
+![]()
+
 I will deep dive into the script i had [created](webapp-script.sh),
 
 The first part is to prepare common dependency for web app, because i only use simple web app (html and css) i'm not installing PHP.
@@ -42,8 +45,15 @@ printf "\n==============> Enabling firewall <==============\n\n"
 sudo ufw allow 'Apache' # allow apache
 ```
 
+The next step is cloning a simple web app, for this project i use simple bootstrap website template that available on my github.
 
+```bash
+# Setup apache2 root directory
+printf "\n==============> Deploying Webapp <==============\n\n"
+cd /var/www
 
+# Clone github repository
+sudo git clone https://github.com/mohzulfikar/webapp.git
+```
 
-## 2. Running the Script
 
