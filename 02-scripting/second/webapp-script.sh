@@ -1,22 +1,22 @@
 #!/usr/bin/env bash
-# shebang diatas dinilai lebih aman jika script dibuat untuk kompatibel dengan distro lain, karena menggunakan bash yang teratur dalam environment variabel terminal
+# shebang in env is considered safer for compatibility among other distro(s)
 
-# Menjalankan update dan upgrade
+# Running update and upgrade
 printf "\n==============> Running update & upgrade <==============\n"
 
 sudo apt-get -y update && sudo apt-get -y dist-upgrade
 
-# Instalasi git
+# Installing git
 printf "\n==============> Installing git <==============\n\n"
 
 sudo apt-get -y install git
 
-# Instalasi apache2
+# Installing apache2
 printf "\n==============> Installing apache2 <==============\n\n"
 
 sudo apt-get -y install apache2
 
-# Pengaturan firewall (optional)
+# firewall config (optional)
 printf "\n==============> Enabling firewall <==============\n\n"
 
 # sudo ufw app list (melihat aplikasi yang dapat diatur)
