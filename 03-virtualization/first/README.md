@@ -10,6 +10,7 @@ In this project, I was assigned to create simple Vagrantfile for provisioning Ub
 	- [4. Boot Up the vm](#4-boot-up-the-vm)
 	- [5. Open a ssh connection](#5-open-a-ssh-connection)
 	- [6. Install apache web server](#6-install-apache-web-server)
+	- [7. IP configuration](#7-ip-configuration)
 
 ## 1. Creating a new directory for vagrant
 
@@ -76,6 +77,20 @@ $ sudo systemctl status apache2
 
 If the apache2 status is "active" then it means we've successfully install the webserver. If you see other status, you might've to wait a few minutes or you can try to restart the server using
 
+
 ```bash
 $ sudo systemctl restart apache2
+```
+
+
+## 7. IP configuration
+
+We can confirm that our virtual machine and webserver are running successfully. Now, logout from ssh session and back to the Vagrantfile to configure the IP to `192.168.56.100`
+
+![](img/intro-vgr-010.png)
+
+After that, we can reload the Vagrant configuration using,
+
+```bash
+vagrant reload
 ```
