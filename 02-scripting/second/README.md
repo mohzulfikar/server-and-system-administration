@@ -13,9 +13,6 @@ In this project, I was assigned to create a bash script that performs automated 
 
 Log in to EC2 instance with an additional rule to allow inbound connection on port 80, create new .sh file with prefered text editor (i use vim btw).
 
-## 2. Running the Script
-![]()
-
 I will deep dive into the script i had [created](webapp-script.sh),
 
 The first part is to prepare common dependency for web app, because i only use simple web app (html and css) i'm not installing PHP.
@@ -56,4 +53,26 @@ cd /var/www
 sudo git clone https://github.com/mohzulfikar/webapp.git
 ```
 
+The last step is to change apache2 root directory from pointing in `/var/www/html` to the my web app directory in `/var/www/webapp`, for this purpose i use sed (stream editor) to automate replacing character in the apache2 configuration file. After that, simply restart apache and the web app should be served.
 
+```bash
+# Change apache2 root directory from /var/www/html to /var/www/webapp and restart apache2
+printf "\n==============> Renaming default apache2 configuration <==============\n\n"
+
+sudo sed -i -r 's/\/html/\/webapp/g' /etc/apache2/sites-available/000-default.conf 
+sudo /etc/init.d/apache2 restart
+```
+
+## 2. Running the Script
+
+Add execute permission and run the script.
+
+![](img/002.png)
+
+The script should be running, wait for a while until the script finish.
+
+![](img/003.png)
+
+![](img/004.png)
+
+![](img/005.png)
