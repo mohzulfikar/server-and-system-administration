@@ -8,6 +8,8 @@ In this project, I was assigned to create simple Vagrantfile for provisioning Ub
 	- [2. Initialize Vagrant directory](#2-initialize-vagrant-directory)
 	- [3. Look at the vagrantfile configuration file](#3-look-at-the-vagrantfile-configuration-file)
 	- [4. Boot Up the vm](#4-boot-up-the-vm)
+	- [5. Open a ssh connection](#5-open-a-ssh-connection)
+	- [6. Install apache web server](#6-install-apache-web-server)
 
 ## 1. Creating a new directory for vagrant
 
@@ -41,3 +43,39 @@ We can boot up the vm using,
 $ vagrant up
 ```
 ![](img/intro-vgr-005.png)
+
+When finished, it will look like this
+
+![](img/intro-vgr-006.png)
+
+## 5. Open a ssh connection
+
+After the configuration is complete, type the command
+```bash
+$ vagrant ssh
+```
+to open the ssh connection from the host, we can configure vm vagrant ubuntu using this connection.
+
+## 6. Install apache web server
+
+Install apache on the vm via ssh connection, don't forget to update it first
+```bash
+$ sudo apt-get update && sudo apt-get -y apache2
+```
+
+![](img/intro-vgr-008.png)
+
+Check apache2 service status with `systemctl`.
+
+```bash
+$ sudo systemctl status apache2
+```
+
+
+![](img/intro-vgr-009.png)
+
+If the apache2 status is "active" then it means we've successfully install the webserver. If you see other status, you might've to wait a few minutes or you can try to restart the server using
+
+```bash
+$ sudo systemctl restart apache2
+```
