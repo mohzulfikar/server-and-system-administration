@@ -11,6 +11,7 @@ In this project, I was assigned to create simple Vagrantfile for provisioning Ub
 	- [5. Open a ssh connection](#5-open-a-ssh-connection)
 	- [6. Install apache web server](#6-install-apache-web-server)
 	- [7. IP configuration](#7-ip-configuration)
+	- [8. Resource(s)](#8-resources)
 
 ## 1. Creating a new directory for vagrant
 
@@ -93,4 +94,34 @@ After that, we can reload the Vagrant configuration using,
 
 ```bash
 vagrant reload
+```
+
+
+And then go to the IP, you should see a well-known apache2 webserver default page. You can also configure it to serve your own webapp.
+
+## 8. Resource(s)
+
+Here's my Vagrantfile
+
+```bash
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/bionic64"
+
+  # config.vm.network "forwarded_port", guest: 80, host: 8080
+  # config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
+  config.vm.network "private_network", ip: "192.168.56.100"
+  # config.vm.network "public_network"
+
+  # PROVIDER SETTINGS
+  config.vm.provider "virtualbox" do |vb|
+    # # Display the VirtualBox GUI when booting the machine
+    # vb.gui = true
+  
+    # # Customize the amount of memory on the VM:
+    # vb.memory = "1024"
+  end
+end
 ```
