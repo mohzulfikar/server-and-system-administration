@@ -10,8 +10,17 @@ In this project, I was assigned to create simple Vagrantfile for serving simple 
 
 ## 1. Initialize Vagrant
 
+First, we can initialize vagrant directory by using `vagrant init`
+
+```bash
+vagrant init ubuntu/bionic64
+```
+
+![](img/001.png)
 
 ## 2. Script Throwback
+
+After that, we can modify our Vagrantfile to match the project specification.
 
 
 ## 3. Provisioning VM and Running the Script

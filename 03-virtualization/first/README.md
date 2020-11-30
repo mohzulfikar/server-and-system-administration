@@ -103,7 +103,7 @@ And then go to the IP, you should see a well-known apache2 webserver default pag
 
 Here's my Vagrantfile
 
-```bash
+```ruby
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
