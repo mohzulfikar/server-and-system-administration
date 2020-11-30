@@ -5,21 +5,21 @@ In this project, I was assigned to create simple Vagrantfile for serving simple 
 - [Provisioning Webapp Using Vagrant](#provisioning-webapp-using-vagrant)
   - [Table of contents](#table-of-contents)
   - [1. Initialize Vagrant](#1-initialize-vagrant)
-  - [2. Script Throwback](#2-script-throwback)
+  - [2. Vagrantfile Configuration](#2-vagrantfile-configuration)
     - [Modify IP](#modify-ip)
-  - [3. Provisioning VM and Running the Script](#3-provisioning-vm-and-running-the-script)
+  - [3. Provisioning the VM](#3-provisioning-the-vm)
 
 ## 1. Initialize Vagrant
 
 First, we can initialize vagrant directory by using `vagrant init`
 
 ```bash
-vagrant init ubuntu/bionic64
+$ vagrant init ubuntu/bionic64
 ```
 
 ![](img/001.png)
 
-## 2. Script Throwback
+## 2. Vagrantfile Configuration
 
 After that, we can modify our Vagrantfile to match the project specification.
 
@@ -58,4 +58,9 @@ Vagrant.configure("2") do |config|
 end
 ```
 
-## 3. Provisioning VM and Running the Script
+## 3. Provisioning the VM
+
+The rest step is straight-forward run the following command,
+```bash
+$ vagrant up
+```

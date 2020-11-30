@@ -93,7 +93,7 @@ We can confirm that our virtual machine and webserver are running successfully. 
 After that, we can reload the Vagrant configuration using,
 
 ```bash
-vagrant reload
+$ vagrant reload
 ```
 
 
