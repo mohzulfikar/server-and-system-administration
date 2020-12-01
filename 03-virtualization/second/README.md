@@ -64,3 +64,15 @@ The rest step is straight-forward run the following command,
 ```bash
 $ vagrant up
 ```
+
+And wait a few minutes.
+
+![](img/002.png)
+
+![](img/003.png)
+
+As you can see, we have the output "Automation Complete" from our script printed just like we run it before on EC2.
+
+You can check the webserver status via ssh or just go to the IP to check if the webapp are successfully deployed.
+
+![](img/004.png)
