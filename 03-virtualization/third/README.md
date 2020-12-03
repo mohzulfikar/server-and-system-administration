@@ -8,6 +8,8 @@ In this project, I was assigned to do wordpress deployment on EC2 instance.
   - [2. Installing Apache, MySQL, and PHP (LAMP)](#2-installing-apache-mysql-and-php-lamp)
   - [3. Wordpress Installation and Configuration](#3-wordpress-installation-and-configuration)
   - [4. Database Configuration](#4-database-configuration)
+  - [5. Finishing the Instalation](#5-finishing-the-instalation)
+  - [6. Wordpress Blog Setup](#6-wordpress-blog-setup)
 
 ## 1. Creating the Instance
 
@@ -98,3 +100,51 @@ $ sudo sed -i -r "s/password_here/$db_root_password/g" wp-config.php
 ```
 
 As you can see, we can automate to replace file content with stream editor. You can check the man pages for more details.
+
+
+## 5. Finishing the Instalation
+
+Install required module for php and apache2
+
+```bash
+$ sudo a2enmod rewrite  
+$ sudo php5enmod mcrypt  # mcrypt in php7 by default isn't supported
+```
+
+Don't forget to installing phpmyadmin for managing your database (optional). If there's a popup open, choose apache2.
+
+```bash
+$ sudo apt-get install phpmyadmin -y
+$ echo 'Include /etc/phpmyadmin/apache.conf' >> /etc/apache2/apache2.conf
+```
+
+![](img/004.png)
+
+Finally, restart apache and mysql service and clean up downloaded file (wordpress.tar.gz)
+```bash
+cd $home
+sudo rm -rf wordpress.tar.gz wordpress
+```
+
+## 6. Wordpress Blog Setup
+
+Visit the instance IP and you should see wordpress installation page as follow,
+
+![](img/005.png)
+
+Create new user and password for your wordpress
+![](img/006.png)
+
+Login to the wp-admin page with previous credential
+
+![](img/007.png)
+
+You should see wp-admin dashboard page, here you can manage your wordpress site interactively and install additional plugin.
+
+![](img/008.png)
+
+You can visit the IP once again to see the default looks of the website.
+
+![](img/009.png)
+
+Take a note that, i'm running the wordpress 5.5.1, should you see some difference on default look is probably because you installed different version of wordpress (the latest version now as i wrote this is 5.6), you can change it on wp-admin page.
