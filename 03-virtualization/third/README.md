@@ -148,7 +148,7 @@ You can visit the IP once again to see the default looks of the website.
 
 ![](img/009.png)
 
-Take a note that, i'm running the wordpress 5.5.1, should you see some difference on default look is probably because you installed different version of wordpress (the latest version now as i wrote this is 5.6), you can change it on wp-admin page.
+Take a note that, i'm running the wordpress 5.5.1, should you see some difference in the default look is probably because you installed a different version of WordPress (the latest version now as i wrote this is 5.6), you can change it on wp-admin page.
 
 ## 7. The Script
 
