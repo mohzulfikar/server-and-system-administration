@@ -10,6 +10,7 @@ In this project, I was assigned to do wordpress deployment on EC2 instance.
   - [4. Database Configuration](#4-database-configuration)
   - [5. Finishing the Instalation](#5-finishing-the-instalation)
   - [6. Wordpress Blog Setup](#6-wordpress-blog-setup)
+  - [7. The Script](#7-the-script)
 
 ## 1. Creating the Instance
 
@@ -148,3 +149,7 @@ You can visit the IP once again to see the default looks of the website.
 ![](img/009.png)
 
 Take a note that, i'm running the wordpress 5.5.1, should you see some difference on default look is probably because you installed different version of wordpress (the latest version now as i wrote this is 5.6), you can change it on wp-admin page.
+
+## 7. The Script
+
+You can see my script on this [link](script.sh)
