@@ -6,7 +6,8 @@ In this project, I was assigned to create EC2 instance with 10GB SSD and attach 
   - [Table of contents](#table-of-contents)
   - [1. Preparing the Needed](#1-preparing-the-needed)
   - [2. Creating New Volume](#2-creating-new-volume)
-  - [3. Look at the vagrantfile configuration file](#3-look-at-the-vagrantfile-configuration-file)
+  - [3. Attaching the Volume](#3-attaching-the-volume)
+  - [4. Mounting the Volume](#4-mounting-the-volume)
 
 ## 1. Preparing the Needed
 
@@ -24,12 +25,23 @@ In the EBS volume dashboard, click "Create Volume" and create new volume as desi
 
 ![](img/003.png)
 
+If successful, the new volume will appear on the EBS dashboard with a state / status available.
+
 ![](img/004.png)
 
 
-## 3. Look at the vagrantfile configuration file
+## 3. Attaching the Volume
 
-![](img/intro-vgr-003.png)
+Right click on the volume and select attach volume.
 
-We can delete the lines that are less important (for this assignment) and leave as follows,
+![](img/005.png)
 
+There will be a popup to choose the instance, recall the ID we noted before and select the instance. For the device name, we can leave as it is or change to `/dev/sdf`, `/dev/sdg`, or whatever. Click "Attach" to attach the volume.
+
+![](img/006.png)
+
+Wait for a while until the volume state changed to "in-use" with little green circle.
+
+![](img/007.png)
+
+## 4. Mounting the Volume
