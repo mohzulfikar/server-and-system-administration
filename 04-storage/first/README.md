@@ -7,7 +7,7 @@ In this project, I was assigned to create EC2 instance with 10GB SSD and attach 
   - [1. Preparing the Needed](#1-preparing-the-needed)
   - [2. Creating New Volume](#2-creating-new-volume)
   - [3. Attaching the Volume](#3-attaching-the-volume)
-  - [4. Mounting the Volume](#4-mounting-the-volume)
+  - [4. Creating a Filesystem](#4-creating-a-filesystem)
 
 ## 1. Preparing the Needed
 
@@ -44,4 +44,33 @@ Wait for a while until the volume state changed to "in-use" with little green ci
 
 ![](img/007.png)
 
-## 4. Mounting the Volume
+## 4. Creating a Filesystem
+
+Run the `df` command to see if the volume already exists on that instance. 
+
+![](img/008.png)
+
+As you can see, the volume we added is not visible yet. This is because we haven't done formatting and mounting the new volume. Although, we can actually see all filesystem including volume / disk that are not mounted yet with command,
+
+```bash
+$ df -aH
+```
+
+We can also see all *storage* that had been attached on the instance using command,
+
+```bash
+$ lsblk
+```
+
+We can see there's one disk named xvdf with 4G of size (which is the volume that we created earlier).
+
+![](img/009.png)
+
+Before *mounting* the new volume, look at the filesystem of the new volume by typing the command,
+
+```bash
+$ sudo file -s /dev/xvdf
+```
+
+Then, look at the root partition filesystem with the command
+
