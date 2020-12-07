@@ -8,6 +8,7 @@ In this project, I was assigned to create EC2 instance with 10GB SSD and attach 
   - [2. Creating New Volume](#2-creating-new-volume)
   - [3. Attaching the Volume](#3-attaching-the-volume)
   - [4. Creating a Filesystem](#4-creating-a-filesystem)
+  - [5. Mounting the Volume](#5-mounting-the-volume)
 
 ## 1. Preparing the Needed
 
@@ -74,3 +75,39 @@ $ sudo file -s /dev/xvdf
 
 Then, look at the root partition filesystem with the command
 
+```bash
+$ sudo file -s /dev/xvda1
+```
+
+![](img/010.png)
+
+Here we can see that the new volume still doesn't have a file system and for the root partition it has an ext4 file system. Create a new filesystem for additional volume with the command,
+
+```bash
+$ sudo mkfs -t ext4 /dev/xvdf
+```
+
+![](img/011.png)
+
+## 5. Mounting the Volume
+
+Create a new directory at home or at root. Create with the desired name such as "tambahan" (addition in bahasa).
+
+```bash
+$ mkdir tambahan /dev/xvdf
+$ sudo mount -t ext4 /dev/xvdf
+```
+
+![](img/012.png)
+
+Run the `df` command again and you can see that the previously created volume appears in the output of the command with the description _Mounted on_ the directory we created earlier.
+
+![](img/013.png)
+
+> A little additional note, because earlier we mounted it as root, the additional folder will change its ownership to root. However, we can change it with the command,
+
+```bash
+$ sudo chown ubuntu:ubuntu tambahan
+```
+
+After that, we should be able to use the directory without root previledges.
