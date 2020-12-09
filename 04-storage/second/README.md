@@ -7,6 +7,10 @@ In this project, I was assigned to create LVM on EC2 instance 10GB capacity cons
   - [1. Creating New Volume](#1-creating-new-volume)
   - [2. Creating Partition](#2-creating-partition)
   - [3. Creating the LVM](#3-creating-the-lvm)
+    - [Creating Physical Volume](#creating-physical-volume)
+    - [Creating Volume Group](#creating-volume-group)
+    - [Creating Logical Volume](#creating-logical-volume)
+    - [Mounting the Logical Volume](#mounting-the-logical-volume)
 
 ## 1. Creating New Volume
 
@@ -50,3 +54,63 @@ Repeat the step for the second disk and the final result should look like this,
 
 Install `lvm2` and make sure to start `dm-mod` kernel module,
 
+```bash
+$ sudo apt-get install lvm2 -y
+$ sudo modprobe dm-mod
+```
+
+### Creating Physical Volume
+
+Create 2 physical volume for all partition in disk 1 and disk 2 using command,
+
+```bash
+$ sudo parted /dev/xvdf
+(parted) set [partitionNumber] lvm on
+```
+
+![lvm 1](img/010.png)
+
+And then use `pvcreate` to create physical volume.
+
+![lvm 2](img/011.png)
+
+### Creating Volume Group
+
+Repeat the step for the other disk and then create a volume group with the 8 partition we created before. 
+
+```bash
+$ sudo vgcreate [nameOfVolumeGroup] /dev/[partition1] /dev/[partition2] ...
+```
+
+The final result should look like this.
+
+![lvm 3](img/012.png)
+
+### Creating Logical Volume
+
+Create a logical volume with 10GiB in size,
+
+```bash
+$ sudo lvcreate -L 10GB [nameOfVolumeGroup] -n lv1
+$ sudo lvdisplay
+```
+
+![lvm 4](img/013.png)
+
+Type `lsblk` to see what partition included on that 10GB logical volume.
+
+![lvm 5](img/014.png)
+
+Format the logical volume to ext4 filesystem with `mkfs`.
+
+![lvm 6](img/015.png)
+
+### Mounting the Logical Volume
+
+Mount the lvm to check if we successfully creating the logical volume. Don't forget to change the ownership of mount directory to make the directory accessible without root previledges.
+
+![lvm 7](img/016.png)
+
+Run `df -H` to see if the logical volume we created before is displayed instead of 2 disk we attached before.
+
+![lvm 8](img/017.png)
