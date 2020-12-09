@@ -105,9 +105,9 @@ Run the `df` command again and you can see that the previously created volume ap
 ![](img/013.png)
 
 > A little additional note, because earlier we mounted it as root, the additional folder will change its ownership to root. However, we can change it with the command,
-
-```bash
-$ sudo chown ubuntu:ubuntu tambahan
-```
-
-After that, we should be able to use the directory without root previledges.
+>
+> ```bash
+> $ sudo chown ubuntu:ubuntu tambahan
+> ```
+> 
+> After that, we should be able to use the directory without > root previledges.
