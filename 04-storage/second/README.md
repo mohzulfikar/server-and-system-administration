@@ -1,9 +1,10 @@
 # LVM on AWS EC2
+
 In this project, I was assigned to create LVM on EC2 instance 10GB capacity consist of 2 EBS volume that have 4 partition with 2GiB size each (In short, i should create LVM consist of 5 partition).
 
-## Table of contents
+## Table of contents <!-- omit in toc -->
+
 - [LVM on AWS EC2](#lvm-on-aws-ec2)
-  - [Table of contents](#table-of-contents)
   - [1. Creating New Volume](#1-creating-new-volume)
   - [2. Creating Partition](#2-creating-partition)
   - [3. Creating the LVM](#3-creating-the-lvm)
@@ -55,8 +56,8 @@ Repeat the step for the second disk and the final result should look like this,
 Install `lvm2` and make sure to start `dm-mod` kernel module,
 
 ```bash
-$ sudo apt-get install lvm2 -y
-$ sudo modprobe dm-mod
+sudo apt-get install lvm2 -y
+sudo modprobe dm-mod
 ```
 
 ### Creating Physical Volume
@@ -76,10 +77,10 @@ And then use `pvcreate` to create physical volume.
 
 ### Creating Volume Group
 
-Repeat the step for the other disk and then create a volume group with the 8 partition we created before. 
+Repeat the step for the other disk and then create a volume group with the 8 partition we created before.
 
 ```bash
-$ sudo vgcreate [nameOfVolumeGroup] /dev/[partition1] /dev/[partition2] ...
+sudo vgcreate [nameOfVolumeGroup] /dev/[partition1] /dev/[partition2] ...
 ```
 
 The final result should look like this.
@@ -91,8 +92,8 @@ The final result should look like this.
 Create a logical volume with 10GiB in size,
 
 ```bash
-$ sudo lvcreate -L 10GB [nameOfVolumeGroup] -n lv1
-$ sudo lvdisplay
+sudo lvcreate -L 10GB [nameOfVolumeGroup] -n lv1
+sudo lvdisplay
 ```
 
 ![lvm 4](img/013.png)

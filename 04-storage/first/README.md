@@ -31,7 +31,6 @@ If successful, the new volume will appear on the EBS dashboard with a state / st
 
 ![select volume](img/004.png)
 
-
 ## 3. Attaching the Volume
 
 Right click on the volume and select attach volume.
@@ -48,7 +47,7 @@ Wait for a while until the volume state changed to "in-use" with little green ci
 
 ## 4. Creating a Filesystem
 
-Run the `df` command to see if the volume already exists on that instance. 
+Run the `df` command to see if the volume already exists on that instance.
 
 ![filesystem](img/008.png)
 
@@ -80,35 +79,35 @@ Then, look at the root partition filesystem with the command
 sudo file -s /dev/xvda1
 ```
 
-![](img/010.png)
+![list volume](img/010.png)
 
 Here we can see that the new volume still doesn't have a file system and for the root partition it has an ext4 file system. Create a new filesystem for additional volume with the command,
 
 ```bash
-$ sudo mkfs -t ext4 /dev/xvdf
+sudo mkfs -t ext4 /dev/xvdf
 ```
 
-![](img/011.png)
+![make filesystem](img/011.png)
 
 ## 5. Mounting the Volume
 
 Create a new directory at home or at root. Create with the desired name such as "tambahan" (addition in bahasa).
 
 ```bash
-$ mkdir tambahan /dev/xvdf
-$ sudo mount -t ext4 /dev/xvdf
+mkdir tambahan /dev/xvdf
+sudo mount -t ext4 /dev/xvdf
 ```
 
-![](img/012.png)
+![create new dir](img/012.png)
 
 Run the `df` command again and you can see that the previously created volume appears in the output of the command with the description _Mounted on_ the directory we created earlier.
 
-![](img/013.png)
+![list mounted devices](img/013.png)
 
 > A little additional note, because earlier we mounted it as root, the additional folder will change its ownership to root. However, we can change it with the command,
 >
 > ```bash
 > $ sudo chown ubuntu:ubuntu tambahan
 > ```
-> 
-> After that, we should be able to use the directory without > root previledges.
+>
+> After that, we should be able to use the directory without root previledges.
