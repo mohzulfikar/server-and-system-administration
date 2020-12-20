@@ -1,9 +1,10 @@
 # Wordpress Deployment
+
 In this project, I was assigned to do wordpress deployment on EC2 instance.
 
-## Table of contents
+## Table of contents <!-- omit in toc -->
+
 - [Wordpress Deployment](#wordpress-deployment)
-  - [Table of contents](#table-of-contents)
   - [1. Creating the Instance](#1-creating-the-instance)
   - [2. Installing Apache, MySQL, and PHP (LAMP)](#2-installing-apache-mysql-and-php-lamp)
   - [3. Wordpress Installation and Configuration](#3-wordpress-installation-and-configuration)
@@ -16,31 +17,32 @@ In this project, I was assigned to do wordpress deployment on EC2 instance.
 
 Choose Ubuntu 18.04 AMI, don't forget to set the security group with an additional rule to allow inbound connection on port 80 (well, actually i think we should learn how to automate this in the future).
 
-![](img/001.png)
+![create instance](img/001.png)
 
 Open SSH connection to the server.
 
-![](img/002.png)
+![ssh](img/002.png)
 
 The command i run on the screenshot is to set database name environtment variable for wordpress. Do the following command to initialize setup.
 
 ```bash
-$ export wordpress_db_name="your_wpdb_name"
+export wordpress_db_name="your_wpdb_name"
 ```
 
 ```bash
-$ export db_root_password="your_wpdb_password"
+export db_root_password="your_wpdb_password"
 ```
 
 Please take a note that you MUST NOT do this (specify the password in plaintext) in the production environtment.
 
 And then, update the instance
 
-![](img/003.png)
+![export env](img/003.png)
 
 ## 2. Installing Apache, MySQL, and PHP (LAMP)
 
 Install the webserver, database, and PHP with the following command
+
 ```bash
 # Installing apache2
 $ sudo apt-get install apache2 apache2-utils -y  
@@ -95,6 +97,8 @@ After that, we can configure wp-config.php to specify our database name and pass
 ```bash
 $ cd /var/www/html/
 $ sudo mv wp-config-sample.php wp-config.php
+
+# Replace some value with stream editor
 $ sudo sed -i -r "s/database_name_here/$wordpress_db_name/g" wp-config.php
 $ sudo sed -i -r "s/username_here/root/g" wp-config.php
 $ sudo sed -i -r "s/password_here/$db_root_password/g" wp-config.php
@@ -102,26 +106,29 @@ $ sudo sed -i -r "s/password_here/$db_root_password/g" wp-config.php
 
 As you can see, we can automate to replace file content with stream editor. You can check the man pages for more details.
 
-
 ## 5. Finishing the Instalation
 
 Install required module for php and apache2
 
 ```bash
 $ sudo a2enmod rewrite  
-$ sudo php5enmod mcrypt  # mcrypt in php7 by default isn't supported
+
+# mcrypt in php7 by default isn't supported
+$ sudo php5enmod mcrypt
 ```
 
 Don't forget to installing phpmyadmin for managing your database (optional). If there's a popup open, choose apache2.
 
 ```bash
+# Install and configure phpmyadmin
 $ sudo apt-get install phpmyadmin -y
 $ echo 'Include /etc/phpmyadmin/apache.conf' >> /etc/apache2/apache2.conf
 ```
 
-![](img/004.png)
+![phpmyadmin setting](img/004.png)
 
 Finally, restart apache and mysql service and clean up downloaded file (wordpress.tar.gz)
+
 ```bash
 cd $home
 sudo rm -rf wordpress.tar.gz wordpress
@@ -131,22 +138,22 @@ sudo rm -rf wordpress.tar.gz wordpress
 
 Visit the instance IP and you should see wordpress installation page as follow,
 
-![](img/005.png)
+![wp-setup 1](img/005.png)
 
 Create new user and password for your wordpress
-![](img/006.png)
+![wp-setup 2](img/006.png)
 
 Login to the wp-admin page with previous credential
 
-![](img/007.png)
+![wp-setup 3](img/007.png)
 
 You should see wp-admin dashboard page, here you can manage your wordpress site interactively and install additional plugin.
 
-![](img/008.png)
+![wp dashboard](img/008.png)
 
 You can visit the IP once again to see the default looks of the website.
 
-![](img/009.png)
+![wp welcome page](img/009.png)
 
 Take a note that, i'm running the wordpress 5.5.1, should you see some difference in the default look is probably because you installed a different version of WordPress (the latest version now as i wrote this is 5.6), you can change it on wp-admin page.
 
