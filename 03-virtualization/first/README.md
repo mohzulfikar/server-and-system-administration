@@ -1,17 +1,18 @@
 # Intro to Vagrant
+
 In this project, I was assigned to create simple Vagrantfile for provisioning Ubuntu VM with private IP 192.168.56.100.
 
-## Table of contents
+## Table of contents <!-- omit in toc -->
+
 - [Intro to Vagrant](#intro-to-vagrant)
-	- [Table of contents](#table-of-contents)
-	- [1. Creating a new directory for vagrant](#1-creating-a-new-directory-for-vagrant)
-	- [2. Initialize Vagrant directory](#2-initialize-vagrant-directory)
-	- [3. Look at the vagrantfile configuration file](#3-look-at-the-vagrantfile-configuration-file)
-	- [4. Boot Up the vm](#4-boot-up-the-vm)
-	- [5. Open a ssh connection](#5-open-a-ssh-connection)
-	- [6. Install apache web server](#6-install-apache-web-server)
-	- [7. IP configuration](#7-ip-configuration)
-	- [8. Resource(s)](#8-resources)
+  - [1. Creating a new directory for vagrant](#1-creating-a-new-directory-for-vagrant)
+  - [2. Initialize Vagrant directory](#2-initialize-vagrant-directory)
+  - [3. Look at the vagrantfile configuration file](#3-look-at-the-vagrantfile-configuration-file)
+  - [4. Boot Up the vm](#4-boot-up-the-vm)
+  - [5. Open a ssh connection](#5-open-a-ssh-connection)
+  - [6. Install apache web server](#6-install-apache-web-server)
+  - [7. IP configuration](#7-ip-configuration)
+  - [8. Resource(s)](#8-resources)
 
 ## 1. Creating a new directory for vagrant
 

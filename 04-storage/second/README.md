@@ -12,6 +12,7 @@ In this project, I was assigned to create LVM on EC2 instance 10GB capacity cons
     - [Creating Volume Group](#creating-volume-group)
     - [Creating Logical Volume](#creating-logical-volume)
     - [Mounting the Logical Volume](#mounting-the-logical-volume)
+  - [4. Make it Persist](#4-make-it-persist)
 
 ## 1. Creating New Volume
 
@@ -115,3 +116,17 @@ Mount the lvm to check if we successfully creating the logical volume. Don't for
 Run `df -H` to see if the logical volume we created before is displayed instead of 2 disk we attached before.
 
 ![lvm 8](img/017.png)
+
+> As you can see, we've successfully mounted the lvm.
+
+## 4. Make it Persist
+
+As you can see, we haven't setup the LVM to be auto-mounted on boot, meaning that we must manually mount LVM each time we start the machine. To make it persist, we can **add it into /etc/fstab file**. If you don't know what /etc/fstab is, you can read [this good article](https://www.redhat.com/sysadmin/etc-fstab) from redhat.
+
+After you know about what /etc/fstab actually is, you can just run this command,
+
+```bash
+sudo bash -c 'echo /dev/[volumeGroupName]/[logicalVolumeName] /path/to/mount/your/lvm ext4 defaults 0 0 >> /etc/fstab'
+```
+
+Voila! now try to restart your machine, the lvm should now be automatically mounted on your desired path.
