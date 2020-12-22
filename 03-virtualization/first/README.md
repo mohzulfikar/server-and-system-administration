@@ -17,86 +17,92 @@ In this project, I was assigned to create simple Vagrantfile for provisioning Ub
 ## 1. Creating a new directory for vagrant
 
 Create a new directory for Vagrantfile. Here, i name it "projek adser", go to the directory and install vagrant (vagrant installation can be done before creating a directory). Because i use arch-based linux, my command for installing it would be,
+
 ```bash
-$ sudo pacman -S vagrant
+sudo pacman -S vagrant
 ```
+
 Wait for the installation process to complete.
-![](img/intro-vgr-001.png)
+
+![installing vagrant](img/intro-vgr-001.png)
 
 ## 2. Initialize Vagrant directory
 
 Open the directory using prefered text editor (here, i use vscodium). Type this command to initialize vagrant directory (create vagrantfile) with ubuntu bionic (18.04) image.
+
 ``` bash
-$ vagrant init ubuntu/bionic64
+vagrant init ubuntu/bionic64
 ```
-![](img/intro-vgr-002.png)
+
+![initialize vagrant dir](img/intro-vgr-002.png)
 
 ## 3. Look at the vagrantfile configuration file
 
-![](img/intro-vgr-003.png)
+![vagrantfile 1](img/intro-vgr-003.png)
 
 We can delete the lines that are less important (for this assignment) and leave as follows,
 
-![](img/intro-vgr-004.png)
+![vagrantfile 2](img/intro-vgr-004.png)
 
 ## 4. Boot Up the vm
 
 We can boot up the vm using,
+
 ```bash
-$ vagrant up
+vagrant up
 ```
-![](img/intro-vgr-005.png)
+
+![start vagrant](img/intro-vgr-005.png)
 
 When finished, it will look like this
 
-![](img/intro-vgr-006.png)
+![boot vagrant](img/intro-vgr-006.png)
 
 ## 5. Open a ssh connection
 
 After the configuration is complete, type the command
+
 ```bash
-$ vagrant ssh
+vagrant ssh
 ```
+
 to open the ssh connection from the host, we can configure vm vagrant ubuntu using this connection.
 
 ## 6. Install apache web server
 
 Install apache on the vm via ssh connection, don't forget to update it first
+
 ```bash
-$ sudo apt-get update && sudo apt-get -y apache2
+sudo apt-get update && sudo apt-get -y apache2
 ```
 
-![](img/intro-vgr-008.png)
+![update and install apache2](img/intro-vgr-008.png)
 
 Check apache2 service status with `systemctl`.
 
 ```bash
-$ sudo systemctl status apache2
+sudo systemctl status apache2
 ```
 
-
-![](img/intro-vgr-009.png)
+![get apache2 status](img/intro-vgr-009.png)
 
 If the apache2 status is "active" then it means we've successfully install the webserver. If you see other status, you might've to wait a few minutes or you can try to restart the server using
-
 
 ```bash
 $ sudo systemctl restart apache2
 ```
 
-
 ## 7. IP configuration
 
 We can confirm that our virtual machine and webserver are running successfully. Now, logout from ssh session and back to the Vagrantfile to configure the IP to `192.168.56.100`
 
-![](img/intro-vgr-010.png)
+![ip config vagrantfile](img/intro-vgr-010.png)
 
 After that, we can reload the Vagrant configuration using,
 
 ```bash
-$ vagrant reload
+vagrant reload
 ```
-
 
 And then go to the IP, you should see a well-known apache2 webserver default page. You can also configure it to serve your own webapp.
 
