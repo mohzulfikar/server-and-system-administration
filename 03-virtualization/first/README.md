@@ -89,7 +89,7 @@ sudo systemctl status apache2
 If the apache2 status is "active" then it means we've successfully install the webserver. If you see other status, you might've to wait a few minutes or you can try to restart the server using
 
 ```bash
-$ sudo systemctl restart apache2
+sudo systemctl restart apache2
 ```
 
 ## 7. IP configuration
