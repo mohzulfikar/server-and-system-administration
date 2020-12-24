@@ -1,9 +1,10 @@
 # Virtualization (Virtualbox & Vagrant)
+
 In this project, I was introduced to the "virtualization" concept. Using the tool called _Vagrant_, we can create an automation for provisioning vm instances.
 
-## Table of contents
+## Table of contents <!-- omit in toc -->
+
 - [Virtualization (Virtualbox & Vagrant)](#virtualization-virtualbox--vagrant)
-  - [Table of contents](#table-of-contents)
   - [First Project: Intro to Vagrant](#first-project-intro-to-vagrant)
     - [Visit this link](#visit-this-link)
   - [Second Project: Provisioning previous web app using vagrant](#second-project-provisioning-previous-web-app-using-vagrant)

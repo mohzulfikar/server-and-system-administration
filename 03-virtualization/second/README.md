@@ -2,10 +2,9 @@
 
 In this project, I was assigned to create simple Vagrantfile for serving simple webapp with bash automation (the one i created in previous project) with private IP 192.168.56.100.
 
-## Table of contents
+## Table of contents <!-- omit in toc -->
 
 - [Provisioning Webapp Using Vagrant](#provisioning-webapp-using-vagrant)
-  - [Table of contents](#table-of-contents)
   - [1. Initialize Vagrant](#1-initialize-vagrant)
   - [2. Vagrantfile Configuration](#2-vagrantfile-configuration)
     - [Modify IP](#modify-ip)
