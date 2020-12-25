@@ -13,10 +13,13 @@ In this project, I was introduced to the "virtualization" concept. Using the too
     - [Visit this link](#visit-this-link-2)
 
 ## First Project: Intro to Vagrant
+
 ### Visit this [link](first/README.md)
 
 ## Second Project: Provisioning previous web app using vagrant
+
 ### Visit this [link](second/README.md)
 
 ## Third Project: Wordpress deployment on EC2
+
 ### Visit this [link](third/README.md)
