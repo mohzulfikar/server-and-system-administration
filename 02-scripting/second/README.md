@@ -11,13 +11,14 @@ In this project, I was assigned to create a bash script that performs automated 
 
 ## 1. Creating the Script
 
-![](img/001.png)
+![initial ssh](img/001.png)
 
 Log in to EC2 instance with an additional rule to allow inbound connection on port 80, create new .sh file with prefered text editor (i use vim btw).
 
 I will deep dive into the script i had [created](webapp-script.sh),
 
 The first part is to prepare common dependency for web app, because i only use simple web app (html and css) i'm not installing PHP.
+
 ```bash
 # Running update and upgrade
 printf "\n==============> Running update & upgrade <==============\n"
@@ -36,6 +37,7 @@ sudo apt-get -y install apache2
 ```
 
 Next, we setup a firewall using ufw. Although, this is optional because we already configure a firewall using security group.
+
 ```bash
 # firewall config (optional)
 printf "\n==============> Enabling firewall <==============\n\n"
@@ -69,12 +71,12 @@ sudo /etc/init.d/apache2 restart
 
 Add execute permission and run the script.
 
-![](img/002.png)
+![execute script](img/002.png)
 
 The script should be running, wait for a while until the script finish.
 
-![](img/003.png)
+![running the script 1](img/003.png)
 
-![](img/004.png)
+![running the script 2](img/004.png)
 
-![](img/005.png)
+![running the script 3](img/005.png)
