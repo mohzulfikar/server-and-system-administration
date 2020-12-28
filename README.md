@@ -2,10 +2,9 @@
 
 > This repository contains projects I worked on from my "Server and Systems Administration" course.
 
-## Table of Contents
+## Table of Contents <!-- omit in toc -->
 
 - [Server and System Administration](#server-and-system-administration)
-  - [Table of Contents](#table-of-contents)
   - [List of Project(s)](#list-of-projects)
     - [[01] Intro to Cloud Computing (AWS)](#01-intro-to-cloud-computing-aws)
     - [[02] Scripting (Bash)](#02-scripting-bash)
