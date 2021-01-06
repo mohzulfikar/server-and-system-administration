@@ -14,6 +14,9 @@ how-to-configure-bind-as-a-private-network-dns-server-on-ubuntu-18-04) guide for
     - [Associate Elastic IP](#associate-elastic-ip)
   - [2. Setup Authoritative Name Server](#2-setup-authoritative-name-server)
     - [Bind9 Installation](#bind9-installation)
+    - [Configuration](#configuration)
+  - [3. Delegate New Zone](#3-delegate-new-zone)
+    - [Setup Personal/Private DNS Server](#setup-personalprivate-dns-server)
 
 ## 1. Setup EC2 with Elastic IP
 
@@ -62,3 +65,43 @@ sudo apt install bind9 bind9utils bind9-doc -y
 ```
 
 ![install bind9](img/008.png)
+
+After that, check if bind9 *service* is running and then enable the service using `systemctl`.
+
+```bash
+sudo systemctl status bind9
+sudo systemctl enable bind9
+```
+
+![enable bind9](img/009.png)
+
+### Configuration
+
+There's 3 file that we need to look at and configure, the first one is `named.conf.option` located at `/etc/bind/`. In this case, i don't modify the file but if you want, you can add ACL block.
+
+The second file is at `/etc/bind/named.conf.local`, create new zone block you want to delegate to this DNS Server. For example, in this case i create new zone called `delegated.mohzulfikar.me`. Something to take a note here, you can have custom name for zone, but it's considered a best practice if you name it to match the subdomain. For the file location, it's also a best practice to follow subdomain name with `db` prefix.
+
+```bash
+zone "delegated.mohzulfikar.me" {
+        type master;
+        file "/etc/bind/db.delegated.mohzulfikar.me";
+};
+```
+
+![config named local](img/010.png)
+
+For the third file, you must create it first according to the database filename in previous file configuration. You can copy from the template provided from bind.
+
+```bash
+sudo cp /etc/bind/db.empty /etc/bind/db.delegated.mohzulfikar.me
+```
+
+## 3. Delegate New Zone
+
+### Setup Personal/Private DNS Server
+
+Before continue to create zone, we must configure custom DNS for our domain first. Just go to your domain dashboard and create new personal dns server first and write the ELASTIC_IP that we associate before (for the nameserver, you can just use ns1 or ns2 or whatever available).
+
+![personal dns](img/011.png)
+
+> I use namecheap for managing my domain, there may be a little difference in the other provider.
