@@ -17,6 +17,7 @@ how-to-configure-bind-as-a-private-network-dns-server-on-ubuntu-18-04) guide for
     - [Configuration](#configuration)
   - [3. Delegate New Zone](#3-delegate-new-zone)
     - [Setup Personal/Private DNS Server](#setup-personalprivate-dns-server)
+    - [Add NS Record](#add-ns-record)
 
 ## 1. Setup EC2 with Elastic IP
 
@@ -105,3 +106,12 @@ Before continue to create zone, we must configure custom DNS for our domain firs
 ![personal dns](img/011.png)
 
 > I use namecheap for managing my domain, there may be a little difference in the other provider.
+
+### Add NS Record
+
+The next step is add new NS record. Why? Because i only delegate `delegated.mohzulfikar.me` to `ns1` nameserver i created before, so i must tell my DNS management (mohzulfikar.me) to points the management of `delegated.mohzulfikar.me` subdomain to `ns1` nameserver.
+
+![delegate zone to a nameserver](img/012.png)
+
+> BTW, I use cloudflare for managing my DNS
+> 
