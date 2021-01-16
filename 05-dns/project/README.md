@@ -18,6 +18,8 @@ how-to-configure-bind-as-a-private-network-dns-server-on-ubuntu-18-04) guide for
   - [3. Delegate New Zone](#3-delegate-new-zone)
     - [Setup Personal/Private DNS Server](#setup-personalprivate-dns-server)
     - [Add NS Record](#add-ns-record)
+    - [Setup Database File](#setup-database-file)
+    - [Create Log File (Optional)](#create-log-file-optional)
 
 ## 1. Setup EC2 with Elastic IP
 
@@ -114,4 +116,33 @@ The next step is add new NS record. Why? Because i only delegate `delegated.mohz
 ![delegate zone to a nameserver](img/012.png)
 
 > BTW, I use cloudflare for managing my DNS
-> 
+
+### Setup Database File
+
+After that, we will change the database file. First, let's have a look on the `SOA` part. You can change the serial, i changed it to 4.
+
+Then, add `NS` and starter `A` records pointing at your desired host.
+
+```bash
+@       IN      SOA     ns1.mohzulfikar.me. admin.delegated.mohzulfikar.me. (
+                              3         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                          86400 )       ; Negative Cache TTL
+;
+        IN      NS      ns1.mohzulfikar.me.
+
+dev.delegated.mohzulfikar.me.   IN      A       54.OOO.OOO.OOO # replace with your host IP
+test.delegated.mohzulfikar.me.  IN      A       54.OOO.OOO.OOO # replace with your host IP
+```
+
+### Create Log File (Optional)
+
+To help with troubleshoot, you can create, format, reformat the log file of bind9 with the following command. The following command is from [this](https://badshah.io/how-i-hosted-a-dns-server-on-aws/#setting-up-the-dns-server) site, don't forget to check their website too.
+
+```bash
+echo 'include "/etc/bind/named.conf.log";' >> /etc/bind/named.conf
+```
+
+Then, create `named.conf.log` with the following content,
