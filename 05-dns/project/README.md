@@ -146,3 +146,29 @@ echo 'include "/etc/bind/named.conf.log";' >> /etc/bind/named.conf
 ```
 
 Then, create `named.conf.log` with the following content,
+
+```bash
+logging {
+ channel bind_log {
+   file "/var/log/named/bind.log" versions 3 size 5m;
+   severity info;
+   print-category yes;
+   print-severity yes;
+   print-time yes;
+ };
+ category default { bind_log; };
+ category update { bind_log; };
+ category update-security { bind_log; };
+ category security { bind_log; };
+ category queries { bind_log; };
+ category lame-servers { null; };
+};
+```
+
+Then create directory for the log,
+
+```bash
+mkdir /var/log/named
+chown bind:root /var/log/named
+chmod 775 /var/log/named/
+```
