@@ -20,6 +20,7 @@ how-to-configure-bind-as-a-private-network-dns-server-on-ubuntu-18-04) guide for
     - [Add NS Record](#add-ns-record)
     - [Setup Database File](#setup-database-file)
     - [Create Log File (Optional)](#create-log-file-optional)
+    - [Finish Up the Setup](#finish-up-the-setup)
 
 ## 1. Setup EC2 with Elastic IP
 
@@ -172,3 +173,33 @@ mkdir /var/log/named
 chown bind:root /var/log/named
 chmod 775 /var/log/named/
 ```
+
+Finally, create logrotate for `bind.log` at `/etc/logrotate.d/bind`.
+
+```bash
+/var/log/named/bind.log
+{
+    rotate 90
+    daily
+    dateext
+    dateformat _%Y-%m-%d
+    missingok
+    create 644 bind bind
+    delaycompress
+    compress
+    notifempty
+    postrotate
+        /bin/systemctl reload bind9
+    endscript
+}
+```
+
+### Finish Up the Setup
+
+Check with `named-checkzone` command,
+
+```bash
+sudo named-checkzone delegated.mohzulfikar.me /etc/bind/db.delegated.mohzulfikar.me
+```
+
+> It should output "OK".
