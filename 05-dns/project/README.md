@@ -203,3 +203,15 @@ sudo named-checkzone delegated.mohzulfikar.me /etc/bind/db.delegated.mohzulfikar
 ```
 
 > It should output "OK".
+
+After that, restart `bind9` service using `systemctl`. Also, don't forget to check the status, it may have some error because typos or something.
+
+```bash
+sudo systemctl restart bind9
+sudo systemctl status bind9 # make sure the status is
+                            # "active (running)"
+```
+
+Done! You can wait the DNS propagation, it usually takes from 30 minutes up to 48 hours.
+
+![dns final](img/013.png)
