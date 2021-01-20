@@ -215,3 +215,11 @@ sudo systemctl status bind9 # make sure the status is
 Done! You can wait the DNS propagation, it usually takes from 30 minutes up to 48 hours.
 
 ![dns final](img/013.png)
+
+You can also check if the name server for delegated zone is changed (different with non-delegated zones) by using `dig` command,
+
+```bash
+dig -t ns delegated.mohzulfikar.me
+```
+
+![dig ns for delegated zone](img/014.png)
