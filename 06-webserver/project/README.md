@@ -6,6 +6,7 @@ In this project, I was assigned to leverage NGINX server block to host multiple 
 
 - [Host Multiple Wordpress Site in EC2](#host-multiple-wordpress-site-in-ec2)
   - [1. EMP Installation](#1-emp-installation)
+    - [Install NGINX](#install-nginx)
 
 ## 1. EMP Installation
 
@@ -13,4 +14,15 @@ So what's EMP or LEMP? It's an abbrevation of Linux, NGINX (Engine-X), MySQL (or
 
 ```bash
 sudo bash -c "apt update && apt dist-upgrade -yq && apt autoremove"
+```
+
+### Install NGINX
+
+Install NGINX and enable it using `systemctl` command,
+
+```bash
+sudo apt install nginx -yqq
+sudo systemctl enable nginx.service
+sudo systemctl status nginx.service # make sure that nginx
+                                    # have "running" status
 ```
