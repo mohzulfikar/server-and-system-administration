@@ -8,6 +8,7 @@ In this project, I was assigned to leverage NGINX server block to host multiple 
   - [1. EMP Installation](#1-emp-installation)
     - [Install NGINX](#install-nginx)
     - [Install Database Server and Client](#install-database-server-and-client)
+    - [Install PHP 7](#install-php-7)
 
 ## 1. EMP Installation
 
@@ -54,3 +55,15 @@ sudo mysql_secure_installation
 Restart MariaDB (or MySQL),
 
 ![mysql restart](img/002.png)
+
+### Install PHP 7
+
+Add ppa php ondrej repository into ubuntu.
+
+```bash
+sudo add-apt-repository ppa:ondrej/php
+```
+
+![add ppa php](img/003.png)
+
+Install PHP 7.1 (you can adjust the version if there's newer release) and the [required/recommended extensions](https://make.wordpress.org/hosting/handbook/handbook/server-environment/).
