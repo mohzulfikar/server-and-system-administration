@@ -7,6 +7,7 @@ In this project, I was assigned to leverage NGINX server block to host multiple 
 - [Host Multiple Wordpress Site in EC2](#host-multiple-wordpress-site-in-ec2)
   - [1. EMP Installation](#1-emp-installation)
     - [Install NGINX](#install-nginx)
+    - [Install Database Server and Client](#install-database-server-and-client)
 
 ## 1. EMP Installation
 
@@ -25,4 +26,25 @@ sudo apt install nginx -yqq
 sudo systemctl enable nginx.service
 sudo systemctl status nginx.service # make sure that nginx
                                     # have "running" status
+```
+
+### Install Database Server and Client
+
+Install mariadb server and client,
+
+```bash
+sudo apt install mariadb-server mariadb-client -yqq
+sudo systemctl enable mysql.service
+sudo systemctl status mysql.service # check mysql status
+```
+
+Start MySQL secure installation, secure installation have several functions,
+
+1. Delete Anonymous users
+2. Remove Remote root Login
+3. Delete test database and it's access
+4. Reload privilege tables
+
+```bash
+sudo mysql_secure_installation
 ```
