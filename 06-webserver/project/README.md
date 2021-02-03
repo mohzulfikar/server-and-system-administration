@@ -48,3 +48,9 @@ Start MySQL secure installation, secure installation have several functions,
 ```bash
 sudo mysql_secure_installation
 ```
+
+![mysql secure installation](img/001.png)
+
+Restart MariaDB (or MySQL),
+
+![mysql restart](img/002.png)
