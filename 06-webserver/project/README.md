@@ -9,6 +9,8 @@ In this project, I was assigned to leverage NGINX server block to host multiple 
     - [Install NGINX](#install-nginx)
     - [Install Database Server and Client](#install-database-server-and-client)
     - [Install PHP 7](#install-php-7)
+  - [2. EMP Configuration](#2-emp-configuration)
+    - [MariaDB](#mariadb)
 
 ## 1. EMP Installation
 
@@ -73,3 +75,27 @@ sudo apt install php7.1-common php7.1-fpm php7.1-mbstring php7.1-xmlrpc php7.1-s
 ```
 
 ![install php and extensions](img/004.png)
+
+
+## 2. EMP Configuration
+
+### MariaDB
+
+Login to mysql root user to create database for wordpress, don't forget to take a note about database user, password, and database name. Also, `FLUSH PRIVILEGES` before you exit the mariadb console.
+
+```bash
+sudo mysql -u root -p
+```
+
+```SQL
+MariaDB > CREATE DATABASE db_name_for_first_wp_site;
+MariaDB > CREATE DATABASE db_name_for_second_wp_site;
+
+MariaDB > GRANT ALL ON db_name_for_first_wp_site.* TO 'db_user_for_first_wp_site'@'localhost' IDENTIFIED BY 'your_password';
+
+MariaDB > GRANT ALL ON db_name_for_second_wp_site.* TO 'db_user_for_second_wp_site'@'localhost' IDENTIFIED BY 'your_password';
+
+MariaDB > FLUSH PRIVILEGES;
+
+MariaDB > exit;
+```
