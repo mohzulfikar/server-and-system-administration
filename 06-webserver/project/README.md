@@ -99,3 +99,11 @@ MariaDB > FLUSH PRIVILEGES;
 
 MariaDB > exit;
 ```
+
+![create db for wordpress](img/005.png)
+
+![create db for wordpress](img/006.png)
+
+![create db for wordpress](img/007.png)
+
+> Pro tip: don't forget to add semicolon for each SQL command :)
