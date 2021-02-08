@@ -11,6 +11,8 @@ In this project, I was assigned to leverage NGINX server block to host multiple 
     - [Install PHP 7](#install-php-7)
   - [2. EMP Configuration](#2-emp-configuration)
     - [MariaDB](#mariadb)
+    - [NGINX](#nginx)
+      - [Sites Available](#sites-available)
 
 ## 1. EMP Installation
 
@@ -107,3 +109,11 @@ MariaDB > exit;
 ![create db for wordpress](img/007.png)
 
 > Pro tip: don't forget to add semicolon for each SQL command :)
+
+### NGINX
+
+#### Sites Available
+
+Create two files in `/etc/nginx/sites-available` directory. It's considered a best practice to create with the domain name we want to use (for example wp-site.example.com).
+
+![nginx sites-available](img/008.png)
