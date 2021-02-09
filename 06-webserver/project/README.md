@@ -117,3 +117,29 @@ MariaDB > exit;
 Create two files in `/etc/nginx/sites-available` directory. It's considered a best practice to create with the domain name we want to use (for example wp-site.example.com).
 
 ![nginx sites-available](img/008.png)
+
+
+For each of the file, you can configure it like this
+
+```nginx
+server {
+    listen 80;
+    listen [::]:80;
+    root /var/www/html/websatu.wuvel.net; # replace this with 
+                                          # your wp location
+    index  index.php index.html index.htm;
+    server_name  websatu.wuvel.net; # replace with your domain
+
+    client_max_body_size 100M;
+
+    location / {
+        try_files $uri $uri/ /index.php?$args;
+    }
+
+    location ~ \.php$ {
+    include snippets/fastcgi-php.conf;
+    fastcgi_pass             unix:/var/run/php/php7.1-fpm.sock;
+    fastcgi_param   SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    }
+}
+```
