@@ -13,6 +13,7 @@ In this project, I was assigned to leverage NGINX server block to host multiple 
     - [MariaDB](#mariadb)
     - [NGINX](#nginx)
       - [Sites Available](#sites-available)
+      - [Sites Enabled](#sites-enabled)
 
 ## 1. EMP Installation
 
@@ -143,3 +144,13 @@ server {
     }
 }
 ```
+
+#### Sites Enabled
+
+After that, enable each of the server block by soft link it to the `/etc/nginx/sites-enabled/` directory.
+
+```bash
+sudo ln -s /etc/nginx/sites-available/your.website.com /etc/nginx/sites-enabled
+```
+
+![nginx sites-enabled](img/009.png)
