@@ -14,6 +14,7 @@ In this project, I was assigned to leverage NGINX server block to host multiple 
     - [NGINX](#nginx)
       - [Sites Available](#sites-available)
       - [Sites Enabled](#sites-enabled)
+      - [Creating Wordpress Application Directory](#creating-wordpress-application-directory)
 
 ## 1. EMP Installation
 
@@ -154,3 +155,13 @@ sudo ln -s /etc/nginx/sites-available/your.website.com /etc/nginx/sites-enabled
 ```
 
 ![nginx sites-enabled](img/009.png)
+
+#### Creating Wordpress Application Directory
+
+Create the directory to store the wordpress,
+
+```bash
+sudo mkdir -p /var/www/html/your.website.com
+```
+
+![create wp dir](img/010.png)
