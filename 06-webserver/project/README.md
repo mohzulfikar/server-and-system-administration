@@ -15,6 +15,8 @@ In this project, I was assigned to leverage NGINX server block to host multiple 
       - [Sites Available](#sites-available)
       - [Sites Enabled](#sites-enabled)
       - [Creating Wordpress Application Directory](#creating-wordpress-application-directory)
+  - [3. Wordpress Configuration](#3-wordpress-configuration)
+    - [Download Wordpress](#download-wordpress)
 
 ## 1. EMP Installation
 
@@ -165,3 +167,18 @@ sudo mkdir -p /var/www/html/your.website.com
 ```
 
 ![create wp dir](img/010.png)
+
+## 3. Wordpress Configuration
+
+### Download Wordpress
+
+Download Wordpress from this [link](https://wordpress.org/latest.tar.gz). After that, extract it using `tar` and copy it to the directory we created before.
+
+```bash
+tar -xzf latest.tar.gz
+sudo cp -R wordpress/* /var/www/html/your.website.com
+```
+
+![wordpress download app](img/011.png)
+
+![wordpress copy app](img/012.png)
