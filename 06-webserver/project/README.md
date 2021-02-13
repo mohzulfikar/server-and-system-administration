@@ -17,6 +17,7 @@ In this project, I was assigned to leverage NGINX server block to host multiple 
       - [Creating Wordpress Application Directory](#creating-wordpress-application-directory)
   - [3. Wordpress Configuration](#3-wordpress-configuration)
     - [Download Wordpress](#download-wordpress)
+    - [Wordpress Configuration](#wordpress-configuration)
 
 ## 1. EMP Installation
 
@@ -182,3 +183,19 @@ sudo cp -R wordpress/* /var/www/html/your.website.com
 ![wordpress download app](img/011.png)
 
 ![wordpress copy app](img/012.png)
+
+### Wordpress Configuration
+
+Before we use wordpress, we must configure
+
+1. Database Name
+2. Database User
+3. Password Database User
+4. Database Host
+5. Database Charset
+
+You can copy `wp-config-sample.php` provided in wordpress app root directory and renamne it to `wp-config.php`
+
+```bash
+sudo cp /var/www/html/yoursite.com/wp-config-sample.php /var/www/html/yoursite.com/wp-config.php
+```
