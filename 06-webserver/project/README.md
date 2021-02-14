@@ -18,6 +18,7 @@ In this project, I was assigned to leverage NGINX server block to host multiple 
   - [3. Wordpress Configuration](#3-wordpress-configuration)
     - [Download Wordpress](#download-wordpress)
     - [Wordpress Configuration](#wordpress-configuration)
+    - [Verify Your Configuration](#verify-your-configuration)
 
 ## 1. EMP Installation
 
@@ -212,3 +213,14 @@ Lastly, change the ownership of your wordpress app directory to www-data or the 
 sudo chown -R www-data:www-data /var/www/html
 sudo chmod -R 755 /var/www/html
 ```
+
+### Verify Your Configuration
+
+Verify your nginx setting we created earlier and restart the nginx service.
+
+```bash
+sudo nginx -t
+sudo systemctl restart nginx
+```
+
+![verify nginx](img/015.png)
