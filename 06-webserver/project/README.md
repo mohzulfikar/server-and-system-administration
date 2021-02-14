@@ -199,3 +199,16 @@ You can copy `wp-config-sample.php` provided in wordpress app root directory and
 ```bash
 sudo cp /var/www/html/yoursite.com/wp-config-sample.php /var/www/html/yoursite.com/wp-config.php
 ```
+
+Here's my example configuration
+
+![wp config from sample](img/013.png)
+
+![wp config](img/014.png)
+
+Lastly, change the ownership of your wordpress app directory to www-data or the webserver user.
+
+```bash
+sudo chown -R www-data:www-data /var/www/html
+sudo chmod -R 755 /var/www/html
+```
