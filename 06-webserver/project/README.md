@@ -19,6 +19,7 @@ In this project, I was assigned to leverage NGINX server block to host multiple 
     - [Download Wordpress](#download-wordpress)
     - [Wordpress Configuration](#wordpress-configuration)
     - [Verify Your Configuration](#verify-your-configuration)
+    - [Setup Wordpress](#setup-wordpress)
 
 ## 1. EMP Installation
 
@@ -224,3 +225,11 @@ sudo systemctl restart nginx
 ```
 
 ![verify nginx](img/015.png)
+
+### Setup Wordpress
+
+Done! now we can visit the website and as you can see we've successfully create 2 different wordpress site on the same EC2 server. Finish the setup on both site.
+
+![first site](img/016.png)
+
+![second site](img/017.png)
