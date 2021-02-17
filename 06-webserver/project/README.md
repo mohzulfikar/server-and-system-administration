@@ -258,3 +258,5 @@ sudo certbot --nginx -d yourwebsite.com
 ![certbot setup](img/019.png)
 
 ![ssl success](img/020.png)
+
+> If you see the config file we created earlier in `/etc/nginx/sites-available/your.website.com`, there's additional block to serve https and redirect all http traffic to https.
