@@ -86,7 +86,6 @@ sudo apt install php7.1-common php7.1-fpm php7.1-mbstring php7.1-xmlrpc php7.1-s
 
 ![install php and extensions](img/004.png)
 
-
 ## 2. EMP Configuration
 
 ### MariaDB
@@ -125,7 +124,6 @@ MariaDB > exit;
 Create two files in `/etc/nginx/sites-available` directory. It's considered a best practice to create with the domain name we want to use (for example wp-site.example.com).
 
 ![nginx sites-available](img/008.png)
-
 
 For each of the file, you can configure it like this
 
