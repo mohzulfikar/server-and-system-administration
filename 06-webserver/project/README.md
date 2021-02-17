@@ -20,6 +20,7 @@ In this project, I was assigned to leverage NGINX server block to host multiple 
     - [Wordpress Configuration](#wordpress-configuration)
     - [Verify Your Configuration](#verify-your-configuration)
     - [Setup Wordpress](#setup-wordpress)
+  - [4. SSL Using Certbot](#4-ssl-using-certbot)
 
 ## 1. EMP Installation
 
@@ -233,3 +234,27 @@ Done! now we can visit the website and as you can see we've successfully create 
 ![first site](img/016.png)
 
 ![second site](img/017.png)
+
+## 4. SSL Using Certbot
+
+Now then, we've successfully setup the site but, as you can see the project requires us to make one of the site serves with HTTPS.
+
+There are two methods to enable HTTPS, by using certbot (automatic) and by using self-signed certificate and manually update the nginx server configuration. I choose the first one for the sake of simplicity, but if you have dev/test environment on local, you can't use the first method (see [this link](https://www.youtube.com/watch?v=X3Pr5VATOyA) to set up SSL with self-signed certificate).
+
+First, we need to install certbot and certbot module for nginx.
+
+```bash
+sudo apt install certbot python3-certbot-nginx -yqq
+```
+
+![certbot install](img/018.png)
+
+After that, we can just run certbot to generate and verify the domain of our website.
+
+```bash
+sudo certbot --nginx -d yourwebsite.com
+```
+
+![certbot setup](img/019.png)
+
+![ssl success](img/020.png)
