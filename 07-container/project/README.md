@@ -17,3 +17,11 @@ sudo sh get-docker.sh
 ```
 
 ![get docker](img/001.png)
+
+After that, add current user to docker group, exit the current session, and reconnect to SSH (this need to be done).
+
+```bash
+sudo usermod -aG docker ubuntu
+```
+
+![usermod docker](img/002.png)
