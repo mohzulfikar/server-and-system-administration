@@ -6,6 +6,7 @@ In this project, I was assigned to deploy wordpress by using docker-compose. The
 
 - [Deploy Wordpress using Docker Compose](#deploy-wordpress-using-docker-compose)
   - [1. Docker and Docker Compose Installation](#1-docker-and-docker-compose-installation)
+  - [2. Configuring Docker Compose](#2-configuring-docker-compose)
 
 ## 1. Docker and Docker Compose Installation
 
@@ -25,3 +26,11 @@ sudo usermod -aG docker ubuntu
 ```
 
 ![usermod docker](img/002.png)
+
+Create new directory for the project and install docker-compose with `apt`.
+
+```bash
+sudo apt install docker-compose -yqqq
+```
+
+## 2. Configuring Docker Compose
