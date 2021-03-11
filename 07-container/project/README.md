@@ -34,3 +34,39 @@ sudo apt install docker-compose -yqqq
 ```
 
 ## 2. Configuring Docker Compose
+
+Create new compose file named `docker-compose.yml` with two service (wordpress and mysql).
+
+```yml
+version: '3'
+
+services:
+   db:
+       image: mysql:8.0
+       volumes:
+        - db_data:/var/lib/mysql
+       restart: always
+       environment:
+          MYSQL_ROOT_PASSWORD: password-adser-wp123
+          MYSQL_DATABASE: wordpress
+          MYSQL_USER: wp-adser
+          MYSQL_PASSWORD: wp-adser123
+       ports:
+        - "3306:3306"
+
+   wordpress:
+       depends_on:
+        - db
+       image: wordpress:latest
+       restart: always
+       environment:
+          WORDPRESS_DB_HOST: db
+          WORDPRESS_DB_USER: wp-adser
+          WORDPRESS_DB_PASSWORD: wp-adser123
+          WORDPRESS_DB_NAME: wordpress
+       ports:
+        - "80:80"
+
+volumes:
+    db_data: {}
+```
