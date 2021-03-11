@@ -70,3 +70,5 @@ services:
 volumes:
     db_data: {}
 ```
+
+As you can see, in this config file, first we create db service with `mysql:8.0` image. Then, we define the shared volume to save mysql data and restart policy to `always`. We also configuring some environment variable for wordpress application and define the port (3306 on host is forwarded to 3306 port on mysql docker container). On the wordpress service we define `depends_on` value to make sure that `db` is created earlier before wordpress container. The environment variable is set to follow what we defined earlier. We can also separate our env declaration to `.env` file and define `env_file: .env` on the services.
