@@ -80,3 +80,10 @@ docker-compose up -d
 ```
 
 To check if the container has been created successfully, you can use `ps` command in `docker-compose` or just list the active container on `docker`.
+
+```bash
+docker-compose ps   # see the docker-compose process
+docker container ls # to see the active container
+```
+
+![docker compose](img/003.png)
