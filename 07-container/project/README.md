@@ -7,6 +7,7 @@ In this project, I was assigned to deploy wordpress by using docker-compose. The
 - [Deploy Wordpress using Docker Compose](#deploy-wordpress-using-docker-compose)
   - [1. Docker and Docker Compose Installation](#1-docker-and-docker-compose-installation)
   - [2. Configuring Docker Compose](#2-configuring-docker-compose)
+  - [3. Finish Your Wordpress Setup](#3-finish-your-wordpress-setup)
 
 ## 1. Docker and Docker Compose Installation
 
@@ -87,3 +88,9 @@ docker container ls # to see the active container
 ```
 
 ![docker compose](img/003.png)
+
+## 3. Finish Your Wordpress Setup
+
+Finish your wordpress setup.
+
+![wp setup](img/004.png)
