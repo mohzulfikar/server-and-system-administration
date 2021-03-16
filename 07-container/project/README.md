@@ -94,3 +94,7 @@ docker container ls # to see the active container
 Finish your wordpress setup.
 
 ![wp setup](img/004.png)
+
+Voila! You now have wordpress site running on docker!
+
+![wp index](img/005.png)
