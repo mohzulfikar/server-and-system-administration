@@ -6,3 +6,11 @@ The project is about configuring Moodle using AWS EC2 with 2 instance with the f
 - Second instance EC2 as a database server
 - The site must have HTTPS
 - The site must use a domain provided on the spreadsheet (or custom)
+
+There's also additional requirements as follows,
+
+- Use elastic IP for the instance
+- For mysql, modify the configuration on /etc/mysql/my.cnf so that the bind address is 0.0.0.0 (the default was loopback ip 127.0.0.1)
+- Open only the required port in SG (80, 443, 3306)
+
+> As an additional notes, this is also a collaborative project. I partnered with [Fikri](wuvel.net) to finish the project, you can visit his website too :)
