@@ -19,7 +19,20 @@ There's also additional requirements as follows,
 
 - [Mid-term Project](#mid-term-project)
   - [EC2 Setup](#ec2-setup)
+    - [Web Server](#web-server)
 
 ## EC2 Setup
 
 We will create 2 instance for webserver and database. In the webserver instance, i'll open port 80 and 443 and for the database server i'll only open 3306 for mysql and 22 for SSH in each instance.
+
+### Web Server
+
+Just deploy new EC2 instance and make sure to configure the security group as follows,
+
+![EC2 SG webserver](img/001.png)
+
+After the instance is successfully deployed, allocate new elastic IP and associate it to the instance we created earlier.
+
+![elastic ip webserver 1](img/002.png)
+
+![elastic ip webserver 2](img/003.png)
