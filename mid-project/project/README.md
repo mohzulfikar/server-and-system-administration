@@ -20,6 +20,7 @@ There's also additional requirements as follows,
 - [Mid-term Project](#mid-term-project)
   - [EC2 Setup](#ec2-setup)
     - [Web Server](#web-server)
+    - [Database Server](#database-server)
 
 ## EC2 Setup
 
@@ -36,3 +37,13 @@ After the instance is successfully deployed, allocate new elastic IP and associa
 ![elastic ip webserver 1](img/002.png)
 
 ![elastic ip webserver 2](img/003.png)
+
+### Database Server
+
+Deploy the second instance with ubuntu 20.04 with security group to open port 22 and 3306.
+
+![EC2 SG db](img/004.png)
+
+Allocate new elastic ip and associate it to the instance.
+
+![elastic ip db](img/005.png)
