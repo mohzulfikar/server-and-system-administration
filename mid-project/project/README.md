@@ -21,6 +21,9 @@ There's also additional requirements as follows,
   - [EC2 Setup](#ec2-setup)
     - [Web Server](#web-server)
     - [Database Server](#database-server)
+  - [LEMP Installation](#lemp-installation)
+    - [Nginx](#nginx)
+    - [MySQL](#mysql)
 
 ## EC2 Setup
 
@@ -47,3 +50,25 @@ Deploy the second instance with ubuntu 20.04 with security group to open port 22
 Allocate new elastic ip and associate it to the instance.
 
 ![elastic ip db](img/005.png)
+
+## LEMP Installation
+
+The next step is to install Nginx, MySQL, and PHP to serve the moodle webapp.
+
+First thing first, update your repository first with
+
+```bash
+sudo bash -c "apt-get update && apt-get dist-upgrade && apt-get autoremove"
+```
+
+### Nginx
+
+After the update is successfull, install nginx and start the services.
+
+![install nginx](img/006.png)
+
+Enable nginx service so that it runs on startup automatically even after we restart the machine.
+
+![enable nginx](img/007.png)
+
+### MySQL
