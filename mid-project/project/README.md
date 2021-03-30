@@ -72,3 +72,11 @@ Enable nginx service so that it runs on startup automatically even after we rest
 ![enable nginx](img/007.png)
 
 ### MySQL
+
+After that, install MySQL server in the second instance.
+
+![mysql installation](img/008.png)
+
+Don't forget to enable the services too.
+
+![mysql enable](img/009.png)
