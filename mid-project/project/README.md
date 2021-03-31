@@ -98,3 +98,17 @@ After we've been successfully installed mysql in the second instance, we will co
 - Delete root remote login access
 - Delete *test* database
 - Reload privileges table
+
+```bash
+sudo mysql_secure_installation
+```
+
+![mysql secure 1](img/011.png)
+
+![mysql secure 2](img/012.png)
+
+Open mysql configuration file in `/etc/mysql/my.cnf` and change the port to 3306 and bind-address to 0.0.0.0.
+
+![mysql conf](img/013.png)
+
+Login as root to mysql console and create database and user for moodle.
