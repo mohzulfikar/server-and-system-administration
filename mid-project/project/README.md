@@ -24,6 +24,8 @@ There's also additional requirements as follows,
   - [LEMP Installation](#lemp-installation)
     - [Nginx](#nginx)
     - [MySQL](#mysql)
+    - [PHP](#php)
+  - [MySQL Configuration](#mysql-configuration)
 
 ## EC2 Setup
 
@@ -80,3 +82,19 @@ After that, install MySQL server in the second instance.
 Don't forget to enable the services too.
 
 ![mysql enable](img/009.png)
+
+### PHP
+
+Then, install PHP with the required extension and php-fpm.
+
+![php installation](img/010.png)
+
+## MySQL Configuration
+
+After we've been successfully installed mysql in the second instance, we will configure MySQL. Execute `mysql_secure_installation` command to configure this atribute,
+
+- Setup root password
+- Delete *anonymous* user
+- Delete root remote login access
+- Delete *test* database
+- Reload privileges table
