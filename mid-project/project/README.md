@@ -112,3 +112,22 @@ Open mysql configuration file in `/etc/mysql/my.cnf` and change the port to 3306
 ![mysql conf](img/013.png)
 
 Login as root to mysql console and create database and user for moodle.
+
+```sql
+CREATE DATABASE moodle;
+
+CREATE USER 'moodleuser'@'your_webserver_ip_or_domain.com' identified by 'your_password';
+
+GRANT ALL ON moodle.* TO 'moodleuser'@'your_webserver_ip_or_domain.com' identified by 'your_password';
+GRANT ALL ON moodle.* TO 'moodleuser'@'your_webserver_ip_or_domain.com' WITH GRANT OPTION;
+
+flush privileges;
+```
+
+> Make sure to grant moodle database only to your webserver instance and double check the IP/domain you want to enter.
+
+This is optional, but if you want to create filter or firewall to your database so that only specific ip (your webserver) can access sql, use these following `iptables` command,
+
+```bash
+sudo iptables -A INPUT -p tcp -m tcp --dport 3306 -d your_webserver_ip -j ACCEPT
+```
