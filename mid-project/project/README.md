@@ -26,6 +26,8 @@ There's also additional requirements as follows,
     - [MySQL](#mysql)
     - [PHP](#php)
   - [MySQL Configuration](#mysql-configuration)
+  - [Moodle Configuration](#moodle-configuration)
+    - [Clone or Download Moodle App](#clone-or-download-moodle-app)
 
 ## EC2 Setup
 
@@ -131,3 +133,19 @@ This is optional, but if you want to create filter or firewall to your database 
 ```bash
 sudo iptables -A INPUT -p tcp -m tcp --dport 3306 -d your_webserver_ip -j ACCEPT
 ```
+
+## Moodle Configuration
+
+Now we're gonna setup moodle app. First make sure that `git` and `curl` are already installed.
+
+```bash
+sudo apt install git curl -y
+```
+
+![install git and curl](img/014.png)
+
+### Clone or Download Moodle App
+
+Clone moodle repository or use `curl` to download moodle app. Copy the moodle directory from the clone operation before to webserver directory (usually in /var/www for ubuntu).
+
+![clone moodle app](img/015.png)
