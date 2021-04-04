@@ -28,6 +28,7 @@ There's also additional requirements as follows,
   - [MySQL Configuration](#mysql-configuration)
   - [Moodle Configuration](#moodle-configuration)
     - [Clone or Download Moodle App](#clone-or-download-moodle-app)
+    - [Create the MOODLEDATA Directory](#create-the-moodledata-directory)
 
 ## EC2 Setup
 
@@ -149,3 +150,19 @@ sudo apt install git curl -y
 Clone moodle repository or use `curl` to download moodle app. Copy the moodle directory from the clone operation before to webserver directory (usually in /var/www for ubuntu).
 
 ![clone moodle app](img/015.png)
+
+### Create the MOODLEDATA Directory
+
+Apart from moodle app directory, we must create another directory called `moodledata` (although you custom the name). [This directory is the location of files that are uploaded or created by Moodle Interface][1]. Configure it's permission and change the mode to 755 and the owner to www-data user and group (it may be a little different in other distro).
+
+```bash
+sudo cp -R moodle /var/www/
+sudo mkdir -p /var/www/moodledata
+sudo chown -R www-data:www-data /var/www/moodledata
+sudo chown -R www-data:www-data /var/www/moodle
+sudo chmod -R 755 /var/www/moodledata
+sudo chmod -R 755 /var/www/moodle
+```
+
+<!-- Reference Links -->
+[1]: https://docs.moodle.org/19/en/Moodledata_directory
