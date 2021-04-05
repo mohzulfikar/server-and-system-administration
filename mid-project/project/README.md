@@ -29,6 +29,7 @@ There's also additional requirements as follows,
   - [Moodle Configuration](#moodle-configuration)
     - [Clone or Download Moodle App](#clone-or-download-moodle-app)
     - [Create the MOODLEDATA Directory](#create-the-moodledata-directory)
+    - [Configure Nginx](#configure-nginx)
 
 ## EC2 Setup
 
@@ -162,6 +163,50 @@ sudo chown -R www-data:www-data /var/www/moodledata
 sudo chown -R www-data:www-data /var/www/moodle
 sudo chmod -R 755 /var/www/moodledata
 sudo chmod -R 755 /var/www/moodle
+```
+
+### Configure Nginx
+
+Create nginx config file in `/etc/nginx/sites-available` and link it to the sites-enabled directory. After that, check the syntax using `sudo nginx -t` and then restart nginx.
+
+```bash
+# You can use nano or prefered text editor
+$ sudo vim /etc/nginx/sites-available/moodle
+
+# Check nginx config format
+$ sudo nginx -t
+
+# Restart nginx
+$ sudo systemctl restart nginx.service
+```
+
+This is my config file (you can create it like this)
+
+```nginx
+server {
+    listen 80;
+    listen [::]:80;
+    root /var/ww/moodle;
+    index index.php index.html index.htm;
+    server_name tiftiga.tujuhlangit.id moodleadser.wuvel.net;
+
+    client_max_body_size 100M;
+    autoindex off;
+    location / {
+        try_files $uri $uri/ =404;
+    }
+    
+    location /dataroot/ {
+        internal;
+        alias /var/ww/moodledata/;
+    }
+    location ~ [^/].php(/|$) {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/run/php/php7.4-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+}
 ```
 
 <!-- Reference Links -->
