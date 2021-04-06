@@ -30,6 +30,7 @@ There's also additional requirements as follows,
     - [Clone or Download Moodle App](#clone-or-download-moodle-app)
     - [Create the MOODLEDATA Directory](#create-the-moodledata-directory)
     - [Configure Nginx](#configure-nginx)
+    - [Adding SSL Certificate](#adding-ssl-certificate)
 
 ## EC2 Setup
 
@@ -207,6 +208,18 @@ server {
         include fastcgi_params;
     }
 }
+```
+
+A little note from me, in this configuration i wrote 2 domain for the `server_name` because the first one is the domain from spreadsheet and the second one is Fikri's domain to test if the server can be successfully served. You can actually implement multiple domain to points to your server as log as you create the A record in each DNS server. Common practice to use multiple subdomain like this is pointing `something.com` and `www.something.com` to the same web application.
+
+> Your moodle should be served by now, check it on the port 80 and you can see the installation setup.
+
+### Adding SSL Certificate
+
+The last thing is adding SSL certificate so that the site serve with HTTPS (secure connection). To do that, we must first install certbot and python certbot module.
+
+```bash
+sudo apt install certbot python3-certbot-nginx -y
 ```
 
 <!-- Reference Links -->
