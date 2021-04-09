@@ -222,5 +222,19 @@ The last thing is adding SSL certificate so that the site serve with HTTPS (secu
 sudo apt install certbot python3-certbot-nginx -y
 ```
 
+![install certbot](img/016.png)
+
+Execute certbot and specify the domain.
+
+```bash
+sudo certbot --nginx -d yourdomain.com
+```
+
+![execute certbot](img/017.png)
+
+Check if the Certificate is Valid.
+
+![verify certificate](img/018.png)
+
 <!-- Reference Links -->
 [1]: https://docs.moodle.org/19/en/Moodledata_directory
