@@ -31,6 +31,7 @@ There's also additional requirements as follows,
     - [Create the MOODLEDATA Directory](#create-the-moodledata-directory)
     - [Configure Nginx](#configure-nginx)
     - [Adding SSL Certificate](#adding-ssl-certificate)
+    - [Moodle Setup](#moodle-setup)
 
 ## EC2 Setup
 
@@ -235,6 +236,24 @@ sudo certbot --nginx -d yourdomain.com
 Check if the Certificate is Valid.
 
 ![verify certificate](img/018.png)
+
+### Moodle Setup
+
+Configure and verify the moodle and data directory for moodle.
+
+![verify data directory](img/019.png)
+
+Choose database driver, in my case it's MySQL.
+
+![choose database driver](img/020.png)
+
+Configure database host to points to your database IP or domain, database name, user, password corresponding to what we created earlier, and database port to 3306.
+
+![configure db for moodle](img/021.png)
+
+After that, just click continue until the installation is completed. It should be like this after the configuration.
+
+![moodle admin dashboard](img/022.png)
 
 <!-- Reference Links -->
 [1]: https://docs.moodle.org/19/en/Moodledata_directory
